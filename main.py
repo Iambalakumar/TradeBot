@@ -207,6 +207,10 @@ def parse_signal(message_text: str) -> dict:
 _angel_session = None
 
 def get_angel_session():
+    logger.info(f"CLIENT_ID: {ANGEL_CLIENT_ID}")
+    logger.info(f"API_KEY: {ANGEL_API_KEY}")
+    logger.info(f"PASSWORD len: {len(str(ANGEL_PASSWORD)) if ANGEL_PASSWORD else 'NONE'}")
+    logger.info(f"TOTP len: {len(str(ANGEL_TOTP_SECRET)) if ANGEL_TOTP_SECRET else 'NONE'}")
     """Login to Angel One and return session object (cached)."""
     global _angel_session
     if _angel_session:
