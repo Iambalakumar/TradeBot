@@ -28,7 +28,7 @@ import json
 import time
 import pyotp
 import requests
-from google import genai
+#from google import genai
 from flask import Flask, request, jsonify
 from SmartApi import SmartConnect
 from logzero import logger
@@ -80,7 +80,7 @@ IST = timezone(timedelta(hours=5, minutes=30))  # FIX: IST timezone for market h
 # ─────────────────────────────────────────────
 
 
-client = genai.Client(api_key=GEMINI_API_KEY)
+#client = genai.Client(api_key=GEMINI_API_KEY)
 
 PARSE_PROMPT = """
 You are a trading signal parser for Indian NSE markets (both equities and options).
