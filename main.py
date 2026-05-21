@@ -54,7 +54,7 @@ ANGEL_PASSWORD    = os.getenv("ANGEL_PASSWORD") #4 didgit login pin
 ANGEL_API_KEY     = os.getenv("ANGEL_API_KEY") #after creating API 
 ANGEL_TOTP_SECRET = os.getenv("ANGEL_TOTP_SECRET") #after creating API 
 
-client = genai.Client(api_key=GEMINI_API_KEY)
+#client = genai.Client(api_key=GEMINI_API_KEY)
 
 YOUR_WHATSAPP     = os.getenv("YOUR_WHATSAPP")
 
