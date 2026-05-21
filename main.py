@@ -56,14 +56,14 @@ ANGEL_TOTP_SECRET = os.getenv("ANGEL_TOTP_SECRET") #after creating API
 
 client = genai.Client(api_key=GEMINI_API_KEY)
 
-YOUR_WHATSAPP     = "REMOVED"
+YOUR_WHATSAPP     = os.getenv("YOUR_WHATSAPP")
 
-TARGET_GROUP_NAME = "REMOVED"
+TARGET_GROUP_NAME = os.getenv("TARGET_GROUP_NAME")
 
 
 # FIX: Nifty lot size — NSE revised to 75 in 2024.
 # Original had 65 in the constant but 75 in the Telegram message. Now consistent.
-NIFTY_LOT_SIZE    = 75
+NIFTY_LOT_SIZE    = 65
 
 DEFAULT_LOTS      = 1
 
