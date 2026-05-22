@@ -580,6 +580,14 @@ register_telegram_routes(
 )
 
 
+@app.route("/ip")
+def get_ip():
+    return requests.get("https://api.ipify.org").text
+
+@app.route("/")
+def home():
+    return "running"
+
 # ─────────────────────────────────────────────
 # WHATSAPP WEBHOOK
 # ─────────────────────────────────────────────
