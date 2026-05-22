@@ -43,16 +43,20 @@ from telegram_confirmation import (
 from dotenv import load_dotenv
 load_dotenv()
 
-
+def get_env(key):
+    val = os.getenv(key, "")
+    return val.strip().strip('"').strip("'")
 # ... etc
 # ─────────────────────────────────────────────
 # CONFIG — fill these in
 # ─────────────────────────────────────────────
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-ANGEL_CLIENT_ID   = os.getenv("ANGEL_CLIENT_ID")
-ANGEL_PASSWORD    = os.getenv("ANGEL_PASSWORD") #4 didgit login pin
-ANGEL_API_KEY     = os.getenv("ANGEL_API_KEY") #after creating API 
-ANGEL_TOTP_SECRET = os.getenv("ANGEL_TOTP_SECRET") #after creating API 
+
+
+ANGEL_CLIENT_ID   = get_env("ANGEL_CLIENT_ID")
+ANGEL_PASSWORD    = get_env("ANGEL_PASSWORD")
+ANGEL_API_KEY     = get_env("ANGEL_API_KEY")
+ANGEL_TOTP_SECRET = get_env("ANGEL_TOTP_SECRET")
+GEMINI_API_KEY    = get_env("GEMINI_API_KEY")
 
 #client = genai.Client(api_key=GEMINI_API_KEY)
 
