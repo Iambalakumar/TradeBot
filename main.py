@@ -633,6 +633,14 @@ def whatsapp_webhook():
     process_signal_message(message_text)
     return jsonify({"status": "ok"}), 200
 
+@app.route("/webhook/whatsapp", methods=["GET"])
+def whatsapp_verify():
+    mode      = request.args.get("hub.mode")
+    token     = request.args.get("hub.verify_token")
+    challenge = request.args.get("hub.challenge")
+    if mode == "subscribe" and token == "tradebot123":
+        return challenge, 200
+    return "Forbidden", 403
 
 @app.route("/signal", methods=["POST"])
 def manual_signal():
